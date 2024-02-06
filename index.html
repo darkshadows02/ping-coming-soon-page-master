@@ -50,5 +50,28 @@
        </div>
 
     </div>
+        <script>
+        
+  var emailfiled=document.getElementById("email");
+  var emailerror=document.getElementById("notvalidcase");
+  var btn=document.getElementById("btn1");
+  
+   function feathch(){
+        var val=emailfiled.value.trim();
+        if(!emailfiled.value.trim()){
+            emailerror.innerHTML='Whoops! It looks like you forgot to add your email';
+            emailfiled.style.borderColor="red";
+            return false;
+        }else if(!emailfiled.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+            emailerror.innerHTML="Please provide a valid email address";
+            emailfiled.style.borderColor="red";
+            return false;
+        }
+        emailerror.innerHTML="";
+        emailfiled.style.borderColor="gray";
+        return true;
+   }
+  
+       </script>
 </body>
 </html>
